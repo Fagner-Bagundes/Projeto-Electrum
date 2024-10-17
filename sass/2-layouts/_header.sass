@@ -10,6 +10,7 @@
 
         &-container
             @include  layouts-mixins.center-content
+            padding: .8rem 0
 
             span
                 margin-right: 1rem
@@ -37,7 +38,7 @@
 
         #search-form
             display: flex
-            alig-items: center 
+            align-items: center 
             justify-content: center
             width: 45%
 
@@ -46,13 +47,17 @@
 
             #search
                 width: 60%
+                @include layouts-mixins.rounded-input
 
-        .hearder-actions-menu
+        .header-actions-menu
             display: flex
             align-items: center
 
             .wishlist-container, .header-cart-container
                 @include layouts-mixins.header-icon
+
+                
+
 
 
         
