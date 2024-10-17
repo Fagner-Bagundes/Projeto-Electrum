@@ -1,6 +1,28 @@
-h1 {
-  color: red;
-  font-family: "Open Sans", sans-serif;
+html {
+  font-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+i {
+  color: #d10024;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.5s;
+}
+a:hover {
+  color: #d10024;
+}
+
+ul {
+  list-style: none;
 }
 
 /*# sourceMappingURL=app.css.map */
