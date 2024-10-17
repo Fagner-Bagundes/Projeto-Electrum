@@ -1,0 +1,58 @@
+@use '../1-base/variables' as v
+@use '../1-base/base-mixins' as m
+@use 'layouts-mixins'
+
+.header
+    background-color: v.$bg-color
+    &-top
+        background-color: v.$secondary-bg-color
+        color: v.$light-color
+
+        &-container
+            @include  layouts-mixins.center-content
+
+            span
+                margin-right: 1rem
+
+            i
+                margin-right: .3rem
+
+            a
+                color: v.$light-color
+
+.main-header
+    &-container
+        @include  layouts-mixins.center-content
+        padding: 1.3rem 0
+
+        a, span, i
+            color: #fff
+
+        #brand
+            font-weight: 900
+            font-size: 3rem
+
+            i
+                color: v.$primary-color
+
+        #search-form
+            display: flex
+            alig-items: center 
+            justify-content: center
+            width: 45%
+
+            input
+                height: 40px
+
+            #search
+                width: 60%
+
+        .hearder-actions-menu
+            display: flex
+            align-items: center
+
+            .wishlist-container, .header-cart-container
+                @include layouts-mixins.header-icon
+
+
+        
