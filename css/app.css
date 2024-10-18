@@ -270,6 +270,18 @@ ul {
 .footer i {
   margin-right: 0.3rem;
 }
+.footer h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.footer-top {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
 
 .btn {
   padding: 8px 15px;
