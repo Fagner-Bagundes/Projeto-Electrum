@@ -1,0 +1,20 @@
+@use '../1-base/_variables' as v
+@use '../1-base/_base-mixins'
+@use 'layouts-mixins' as l-m
+
+.footer
+    background-color: v.$bg-color
+    padding: 3rem 0
+
+    a, p
+        color: v.$gray-text-color
+
+    li, p
+        margin-bottom: 1rem
+
+        a
+            &:hover
+                color: v.$primary-color
+    
+    i
+        margin-right: .3rem
