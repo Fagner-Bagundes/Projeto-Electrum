@@ -282,6 +282,9 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+.footer-top-about, .footer-top-categories, .footer-top-information, .footer-top-menu {
+  max-width: 25%;
+}
 
 .btn {
   padding: 8px 15px;
