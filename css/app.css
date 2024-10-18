@@ -112,6 +112,31 @@ ul {
   color: #d10024;
 }
 
+.header-bottom {
+  background-color: #fff;
+  border-bottom: 2px solid #e4e7ed;
+  border-top: 3px solid #d10024;
+}
+.header-bottom ul {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  justify-content: left;
+  padding: 1rem 0;
+}
+.header-bottom ul li {
+  margin-right: 1.3rem;
+}
+.header-bottom ul li a {
+  color: #2b2d42;
+  border-bottom: 2px solid transparent;
+}
+.header-bottom ul li a:hover {
+  color: #d10024;
+  border-color: #d10024;
+}
+
 .btn {
   padding: 8px 15px;
   height: 40px;
