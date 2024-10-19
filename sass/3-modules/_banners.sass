@@ -1,5 +1,5 @@
 @use '../1-base/variables' as v
-@use '../1-base/_base-mixins' as b-m
+@use '../1-base/_base-mixins' as m
 @use 'modules-mixins' as m-mixins
 
 .banner
@@ -11,7 +11,7 @@
     @include m-mixins.center-bg
     background-size: 100%
 
-    @include b-m.mobile
+    @include m.mobile
         width: 90%
         margin: 1rem
 
