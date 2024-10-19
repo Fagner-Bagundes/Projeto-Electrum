@@ -71,6 +71,9 @@
             .wishlist-container, .header-cart-container
                 @include layouts-mixins.header-icon
 
+                @include m.mobile
+                    margin: 1rem
+
 .header-bottom
     background-color: v.$light-color
     border-bottom: 2px solid v.$section-bg-color
@@ -80,6 +83,9 @@
         @include  layouts-mixins.center-content
         justify-content: left
         padding: 1rem 0
+
+        @include m.mobile
+            display: none
 
         li
             margin-right: 1.3rem
