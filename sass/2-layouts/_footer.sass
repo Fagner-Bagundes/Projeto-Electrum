@@ -30,3 +30,22 @@
 
         &-about, &-categories, &-information, &-menu
             max-width: 25%
+
+    &-bottom
+        @include l-m.center-content
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &-payments
+            margin-bottom: 2rem
+
+            i
+                color: v.$dark-color
+                cursor: pointer
+                font-size: 3rem
+                margin: 5px
+                transition: .4s
+
+                &:hover
+                    color: v.$primary-color
