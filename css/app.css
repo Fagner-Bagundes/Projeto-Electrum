@@ -38,6 +38,7 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 0;
+  display: none;
 }
 .header-top-container span {
   margin-right: 1rem;
@@ -55,6 +56,8 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 1.3rem 0;
+  flex-direction: column;
+  align-items: center;
 }
 .main-header-container a, .main-header-container span, .main-header-container i {
   color: #fff;
@@ -71,6 +74,12 @@ ul {
   align-items: center;
   justify-content: center;
   width: 45%;
+}
+@media (max-width: 425px) {
+  .main-header-container #search-form {
+    width: 100%;
+    margin: 2rem 0;
+  }
 }
 .main-header-container #search-form input {
   height: 40px;
