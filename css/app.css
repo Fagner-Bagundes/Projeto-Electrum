@@ -163,9 +163,13 @@ ul {
   display: flex;
   justify-content: space-between;
   padding: 3rem 0;
-  flex-direction: column;
-  align-items: center;
 }
+@media (max-width: 425px) {
+  .banners {
+    flex-direction: column;
+  }
+}
+
 .products-grid {
   max-width: 1170px;
   margin: 0 auto;
