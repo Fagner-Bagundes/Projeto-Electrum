@@ -330,6 +330,11 @@ ul {
   background-color: #15161d;
   padding: 3rem 0;
 }
+@media (max-width: 425px) {
+  .footer {
+    padding: 3rem;
+  }
+}
 .footer a, .footer p {
   color: #89BABC;
 }
@@ -354,8 +359,24 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 425px) {
+  .footer-top {
+    flex-direction: column;
+  }
+}
 .footer-top-about, .footer-top-categories, .footer-top-information, .footer-top-menu {
   max-width: 25%;
+}
+@media (max-width: 425px) {
+  .footer-top-about, .footer-top-categories, .footer-top-information, .footer-top-menu {
+    max-width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .footer-top-about h3, .footer-top-categories h3, .footer-top-information h3, .footer-top-menu h3 {
+    width: 100%;
+    background-color: rgb(27.426, 28.732, 37.874);
+  }
 }
 .footer-bottom {
   max-width: 1170px;

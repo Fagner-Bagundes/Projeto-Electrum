@@ -1,10 +1,14 @@
 @use '../1-base/_variables' as v
-@use '../1-base/_base-mixins'
+@use '../1-base/_base-mixins' as m
 @use 'layouts-mixins' as l-m
+@use 'sass:color'
 
 .footer
     background-color: v.$bg-color
     padding: 3rem 0
+
+    @include m.mobile
+            padding: 3rem
 
     a, p
         color: v.$gray-text-color
@@ -28,8 +32,21 @@
     &-top
         @include l-m.center-content
 
+        @include m.mobile
+            flex-direction: column
         &-about, &-categories, &-information, &-menu
             max-width: 25%
+
+           
+
+            @include m.mobile
+                max-width: 100%
+                margin-bottom: 1rem
+                text-align: center
+
+                h3
+                    width: 100%
+                    background-color: lighten( v.$bg-color, 3% )
 
     &-bottom
         @include l-m.center-content
