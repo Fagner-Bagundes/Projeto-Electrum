@@ -1,5 +1,5 @@
 @use '../1-base/_variables' as v
-@use '../1-base/_base-mixins'
+@use '../1-base/_base-mixins' as m
 @use 'layouts-mixins' as l-m
 
 .newsletter-container
@@ -9,6 +9,9 @@
     align-items: center
     padding: 3rem
     border-top: 2px solid v.$section-bg-color
+
+    @include m.mobile
+        text-align: center
 
     h2
         font-size: 2rem
@@ -24,9 +27,16 @@
         display: flex
         margin-bottom: 3rem
 
+        @include m.mobile
+            width: 100%
+
         input[type='email']
             border: 1px solid v.$section-bg-color
             @include l-m.rounded-input
+            
+            @include m.mobile
+                width: 100%
+
 
     .social-media
 
