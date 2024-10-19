@@ -1,4 +1,5 @@
 @use '../1-base/_variables' as v
+@use '../1-base/_base-mixins' as m
 @use 'layouts-mixins'
 
 .products-grid
@@ -7,11 +8,19 @@
     padding: 2rem 0
     
 
-    h1
+    h2
         font-size: 2rem
         text-transform: uppercase
+
+        @include m.mobile
+            text-align: center
+
 
     &-container
         display: flex
         justify-content: space-between
         padding: 2rem 0
+
+        @include m.mobile
+            flex-direction: column
+            align-items: center
