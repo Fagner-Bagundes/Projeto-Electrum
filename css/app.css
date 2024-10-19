@@ -81,6 +81,7 @@ ul {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 25px;
+  padding: 0 2rem;
 }
 .main-header-container .header-actions-menu {
   display: flex;
