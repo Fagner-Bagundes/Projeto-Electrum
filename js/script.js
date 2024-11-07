@@ -4,9 +4,10 @@ const minutosInput = document.querySelector(`#minutos`)
 const segundosInput = document.querySelector(`#segundos`)
 
 let dias = 2;
-let horas = 5;
+let horas = 3;
 let minutos = 5;
 let segundos = 5;
+let timerSeg;
 
 diaInput.innerHTML = dias;
 function adicionaCronometro(params) {
@@ -19,56 +20,65 @@ function adicionaCronometro(params) {
 
 
 function criaDias(params) {
-    let timerdias = setInterval(()=>{
-        --dias
-        console.log(dias);
+
+    if (dias <= 0) {
         
-        if (dias <= 0){
-            clearInterval(timerdias)
-        }
+        clearInterval(timerSeg)
+    } else{
+        --dias
+        
+
+        
         adicionaCronometro()
-    },1000)
+    }
 }
 
-function criaHoras(params) {
-    console.log(horas);
-    
-    let timerHr = setInterval(()=>{
-        --horas
-        adicionaCronometro()
-        if (horas <= 0){
-            clearInterval(timerHr)
-            criaDias();
-            return
+function criaHoras(params) {    
+    if (dias <= 0){
+        if (horas>0){
+            console.log(horas);
+            --horas
         }
-    },1000)
+    } else{
+        if (horas <= 0) {
+            criaDias()
+            horas = 59
+        }else{
+            --horas
+
+        }
+    }
 }
+    
 
 function criaMinutos() {
-    let timerMin = setInterval(()=>{
-        --minutos
-        adicionaCronometro()
-        
-        if (minutos <= 0){
-            clearInterval(timerMin)
-            criaHoras()
-            return
+    if (horas <= 0){
+        if (minutos>0){
+            --minutos
         }
-    },)
+    } else{
+        if (minutos <= 0) {
+            criaHoras()
+            minutos = 59
+        }else{
+            --minutos
+
+        }
+    }
 }
 
 function criaSegundos(){
-    let timerSeg = setInterval(()=>{
-        console.log(segundos);
+    timerSeg = setInterval(()=>{
         --segundos
         adicionaCronometro()
         
         if (segundos <= 0) {
             clearInterval(timerSeg)
             criaMinutos()
-            return
+            segundos = 60
+            criaSegundos()
         }
-    },1000)
+    },1)
 }
 
 
