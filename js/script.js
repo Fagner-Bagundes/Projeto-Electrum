@@ -3,12 +3,12 @@ const horasInput = document.querySelector(`#horas`)
 const minutosInput = document.querySelector(`#minutos`)
 const segundosInput = document.querySelector(`#segundos`)
 
-let dias = 0;
-let horas = 2;
-let minutos = 2;
-let segundos = 10;
+let dias = 2;
+let horas = 12;
+let minutos = 25;
+let segundos = 32;
 let timer;
-let incia = true;
+
 
 diaInput.innerHTML = dias;
 function adicionaCronometro(params) {
@@ -40,17 +40,17 @@ let decrementa = {
 
 function decrementaDia(){
     if (horas<=0) {
-        horas = 5
+        horas = 23
         decrementa.dias()
     }
 
     if (minutos<=0) {
-        minutos = 5
+        minutos = 59
         decrementa.horas()
     }
 
     if (segundos<= 0) {
-        segundos = 10
+        segundos = 59
         decrementa.minutos()
     }
     decrementa.segundos();
@@ -61,12 +61,12 @@ function decrementaHoras() {
 
     if (horas > 0) {
         if (minutos<=0) {
-            minutos = 10
+            minutos = 59
             decrementa.horas()
         }
 
         if (segundos<= 0) {
-            segundos = 10
+            segundos = 59
             decrementa.minutos()
         }
 
@@ -76,16 +76,26 @@ function decrementaHoras() {
 function decrementaMinutos(){
     if (minutos>0) {
         if (segundos<= 0) {
-            segundos = 10
+            segundos = 59
             decrementa.minutos()
         }
     } else{
         if (segundos=== 0 ) {
-            timer(clearInterval)
+            recriaCronometro();
+            clearInterval(timer)
         }
     }
 }
 
+function recriaCronometro(params) {
+    setTimeout(()=>{
+        dias = 2
+        horas = 12
+        minutos = 25
+        segundos= 32
+        alteraCronometro();
+    },1000*2)
+}
 
 function alteraCronometro(params) {
 
@@ -102,7 +112,7 @@ function alteraCronometro(params) {
               
             decrementa.segundos()
             }
-    }, 200)
+    }, 100)
 
 }
 
