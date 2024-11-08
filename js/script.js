@@ -4,82 +4,82 @@ const minutosInput = document.querySelector(`#minutos`)
 const segundosInput = document.querySelector(`#segundos`)
 
 let dias = 2;
-let horas = 3;
+let horas = 2;
 let minutos = 5;
-let segundos = 5;
-let timerSeg;
+let segundos = 10;
+let timer;
 
 diaInput.innerHTML = dias;
 function adicionaCronometro(params) {
     horasInput.innerHTML = horas;
     minutosInput.innerHTML = minutos;
     segundosInput.innerHTML = segundos;
+    diaInput.innerHTML = dias;
 
 }
 
 
-
-function criaDias(params) {
-
-    if (dias <= 0) {
-        
-        clearInterval(timerSeg)
-    } else{
-        --dias
-        
-
-        
-        adicionaCronometro()
-    }
-}
-
-function criaHoras(params) {    
-    if (dias <= 0){
-        if (horas>0){
-            console.log(horas);
-            --horas
-        }
-    } else{
-        if (horas <= 0) {
-            criaDias()
-            horas = 59
-        }else{
-            --horas
-
-        }
-    }
-}
-    
-
-function criaMinutos() {
-    if (horas <= 0){
-        if (minutos>0){
-            --minutos
-        }
-    } else{
-        if (minutos <= 0) {
-            criaHoras()
-            minutos = 59
-        }else{
-            --minutos
-
-        }
-    }
-}
-
-function criaSegundos(){
-    timerSeg = setInterval(()=>{
+let decrementa = {
+    segundos(){
         --segundos
-        adicionaCronometro()
-        
-        if (segundos <= 0) {
-            clearInterval(timerSeg)
-            criaMinutos()
-            segundos = 60
-            criaSegundos()
-        }
-    },1)
+    },
+    minutos(){
+        --minutos
+    },
+    horas(){
+        --horas
+    },
+    dias(){
+        --dias
+    }
+
+
 }
 
+function alteraCronometro(params) {
 
-criaSegundos();
+    timer = setInterval(()=>{
+        adicionaCronometro();
+        if (dias > 0) {
+            
+            if (horas<=0) {
+                horas = 5
+                decrementa.dias()
+            }
+
+            if (minutos<=0) {
+                minutos = 5
+                decrementa.horas()
+            }
+
+            if (segundos<= 0) {
+                segundos = 10
+                decrementa.minutos()
+            }
+            decrementa.segundos();
+        } else{
+            if(dias === 0){
+                
+                if (minutos<=0) {
+                    minutos = 10
+                    decrementa.horas()
+                }
+    
+                if (segundos<= 0) {
+                    segundos = 10
+                    decrementa.minutos()
+                }
+                decrementa.segundos();
+            }
+        }
+
+        if (horas === 0) {
+            
+        }
+
+
+    }, 200)
+
+}
+
+alteraCronometro()
