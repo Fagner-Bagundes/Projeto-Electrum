@@ -10,7 +10,6 @@ let segundos = 32;
 let timer;
 
 
-diaInput.innerHTML = dias;
 function adicionaCronometro(params) {
     horasInput.innerHTML = horas;
     minutosInput.innerHTML = minutos;
@@ -87,7 +86,7 @@ function decrementaMinutos(){
     }
 }
 
-function recriaCronometro(params) {
+function recriaCronometro() {
     setTimeout(()=>{
         dias = 2
         horas = 12
@@ -97,8 +96,7 @@ function recriaCronometro(params) {
     },1000*2)
 }
 
-function alteraCronometro(params) {
-
+function criaCronometro() {
     timer = setInterval(()=>{
         adicionaCronometro();
         if (dias > 0) {
@@ -112,8 +110,8 @@ function alteraCronometro(params) {
               
             decrementa.segundos()
             }
-    }, 100)
+    }, 1000)
 
 }
 
-alteraCronometro()
+criaCronometro();
